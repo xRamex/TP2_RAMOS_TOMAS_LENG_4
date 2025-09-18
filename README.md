@@ -10,7 +10,7 @@ Este trabajo práctico implementa una aplicación en **React + Vite** que permit
 
 ## 🚀 Demo
 
-👉 [Abrir la aplicación](http://localhost:5173)
+👉 [Abrir la aplicación](https://xramex.github.io/TP2_RAMOS_TOMAS_LENG_4/)
 
 ---
 
