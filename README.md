@@ -1,4 +1,4 @@
-# TP1 – Subir y Mostrar Imagen con File API
+# TP2 – Subir y Mostrar Imagen con File API
 
 Este trabajo práctico implementa una aplicación en **React + Vite** que permite:
 
