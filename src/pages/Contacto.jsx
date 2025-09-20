@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { send } from "@emailjs/browser";
 
 function Contacto() {
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
@@ -27,16 +28,20 @@ function Contacto() {
     if (!validate()) return;
     setSending(true);
     try {
-      // Integración con EmailJS
-      // import { send } from "@emailjs/browser";
-      // await send(
-      //   import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      //   import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      //   { from_name: form.nombre, from_email: form.email, message: form.mensaje },
-      //   { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
-      // );
-      // Simulación temporal (eliminar cuando se integre EmailJS):
-      await new Promise((res) => setTimeout(res, 800));
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("Faltan variables de entorno de EmailJS");
+      }
+
+      await send(
+        serviceId,
+        templateId,
+        { from_name: form.nombre, from_email: form.email, message: form.mensaje },
+        { publicKey }
+      );
       setSent(true);
       setForm({ nombre: "", email: "", mensaje: "" });
     } catch {
