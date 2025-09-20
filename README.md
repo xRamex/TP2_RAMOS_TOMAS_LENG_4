@@ -5,16 +5,16 @@ Sitio con dos secciones: Home (subida de imágenes con drag & drop y preview en 
 ## Funcionalidades
 
 - Subida de imágenes:
-	- Arrastrar y soltar o seleccionar desde el explorador.
-	- Validación de tipo: solo `image/*`.
-	- Vista previa adentro del recuadro con altura máxima controlada.
-	- Acciones: Cambiar imagen y Quitar.
+  - Arrastrar y soltar o seleccionar desde el explorador.
+  - Validación de tipo: solo `image/*`.
+  - Vista previa adentro del recuadro con altura máxima controlada.
+  - Acciones: Cambiar imagen y Quitar.
 - Navegación y páginas:
-	- Navbar con rutas a Home y Contacto (usa HashRouter para compatibilidad con GitHub Pages).
+  - Navbar con rutas a Home y Contacto (usa HashRouter para compatibilidad con GitHub Pages).
 - Contacto con EmailJS:
-	- Validaciones de campos (nombre, email y mensaje).
-	- Envío usando EmailJS desde el frontend.
-	- Aviso de éxito tipo “toast” en la esquina inferior derecha.
+  - Validaciones de campos (nombre, email y mensaje).
+  - Envío usando EmailJS desde el frontend.
+  - Aviso de éxito tipo “toast” en la esquina inferior derecha.
 
 ## Ver online
 
@@ -39,5 +39,6 @@ VITE_EMAILJS_TO=...
 - `npm run preview` — sirve el build localmente.
 
 Notas:
+
 - El proyecto usa `HashRouter` para que las rutas funcionen correctamente en Pages.
 - El `vite.config.js` define `base` y `outDir: docs` para publicar desde la rama principal.
