@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { send } from "@emailjs/browser";
 
 function Contacto() {
@@ -7,6 +7,13 @@ function Contacto() {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [sendError, setSendError] = useState("");
+
+  // Ocultar automáticamente el aviso de éxito luego de unos segundos
+  useEffect(() => {
+    if (!sent) return;
+    const t = setTimeout(() => setSent(false), 4000);
+    return () => clearTimeout(t);
+  }, [sent]);
 
   const validate = () => {
     const e = {};
@@ -30,22 +37,31 @@ function Contacto() {
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  // Si la plantilla tiene destinatario fijo, este valor es opcional
+  const to = import.meta.env.VITE_EMAILJS_TO || import.meta.env.VITE_EMAILJS_TO_EMAIL;
 
       if (!serviceId || !templateId || !publicKey) {
         throw new Error("Faltan variables de entorno de EmailJS");
       }
 
-      await send(
-        serviceId,
-        templateId,
-        { from_name: form.nombre, from_email: form.email, message: form.mensaje },
-        { publicKey }
-      );
+      const params = {
+        from_name: form.nombre,
+        from_email: form.email,
+        message: form.mensaje,
+        reply_to: form.email,
+      };
+      if (to) {
+        params.to = to;
+      }
+
+      // Enviar con opciones (EmailJS v4)
+      await send(serviceId, templateId, params, { publicKey });
       setSent(true);
       setForm({ nombre: "", email: "", mensaje: "" });
-    } catch {
-      setSendError("No se pudo enviar el correo. Intente nuevamente.");
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setSendError(err?.text || err?.message || "No se pudo enviar el correo. Intente nuevamente.");
     } finally {
       setSending(false);
     }
@@ -106,14 +122,19 @@ function Contacto() {
         </form>
 
         {sent && (
-          <div className="modal-backdrop" onClick={() => setSent(false)}>
-            <div className="modal" role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
-              <h3>¡Mensaje enviado!</h3>
-              <p>Gracias por contactarte. Te responderé pronto.</p>
-              <div className="form-actions">
-                <button className="btn" onClick={() => setSent(false)}>Cerrar</button>
-              </div>
+          <div className="toast toast-success" role="status" aria-live="polite">
+            <div className="toast-content">
+              <strong>¡Mensaje enviado!</strong>
+              <span>Gracias por contactarte. Te responderé pronto.</span>
             </div>
+            <button
+              className="toast-close"
+              aria-label="Cerrar notificación"
+              onClick={() => setSent(false)}
+              title="Cerrar"
+            >
+              ×
+            </button>
           </div>
         )}
       </section>

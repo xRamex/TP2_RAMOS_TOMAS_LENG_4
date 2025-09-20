@@ -93,9 +93,9 @@
   backdrop-filter: blur(6px);
 }
 
-/* Controla la altura máxima del preview dentro de la tarjeta de subida */
+
 .upload-card {
-  --preview-max-height: 380px; /* Cambiá este valor para ajustar la altura máxima del preview */
+  --preview-max-height: 380px; /* Cambiar este valor para ajustar la altura máxima del preview */
 }
 
 .app-footer {
@@ -252,21 +252,66 @@
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  /* Fondo sólido sin transparencia para oscurecer completamente el contenido detrás */
+  background: #0b1220; /* azul muy oscuro */
+  z-index: 999;
   display: grid;
   place-items: center;
 }
 
 .modal {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(148, 163, 184, 0.35);
+  /* Contenedor del modal con color sólido (sin transparencia) */
+  background: #111827; /* gris azulado oscuro */
+  border: 1px solid #334155;  /* borde sólido */
   border-radius: 12px;
   padding: 1rem 1.25rem;
   width: min(520px, calc(100% - 2rem));
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 
-/* Light theme refinements */
+/* Toast (aviso inferior derecho, no bloquea la página) */
+.toast {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+  border: 1px solid #334155;
+  background: #111827; /* sólido, sin transparencia */
+  color: #e5e7eb;
+}
+
+.toast-content {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.toast-success {
+  border-color: #16a34a; /* verde */
+}
+
+.toast-close {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.1rem 0.25rem;
+}
+
+/* Para tema blanco */
 @media (prefers-color-scheme: light) {
   .card { background: rgba(255, 255, 255, 0.9); }
   .dropzone { background: rgba(248, 250, 252, 0.6); }
+  /* Se mantiene el backdrop sólido y el modal en blanco puro */
+  .modal { background: #ffffff; border-color: #e2e8f0; }
+  /* Toast en tema claro */
+  .toast { background: #ffffff; color: #111827; border-color: #e2e8f0; box-shadow: 0 10px 24px rgba(0,0,0,0.15); }
+  .toast-success { border-color: #22c55e; }
 }
