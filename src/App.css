@@ -1,42 +1,194 @@
+/* App shell layout */
 #root {
-  max-width: 1280px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 2rem 1.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-shell {
+  display: grid;
+  gap: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: #fff;
+  font-weight: 700;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.subtitle {
+  opacity: 0.8;
+  margin: 0;
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+}
+
+.section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.section-desc {
+  margin: 0;
+  opacity: 0.8;
 }
 
 .card {
-  padding: 2em;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 14px;
+  padding: 1.25rem;
+  backdrop-filter: blur(6px);
 }
 
-.read-the-docs {
-  color: #888;
+/* Controla la altura máxima del preview dentro de la tarjeta de subida */
+.upload-card {
+  --preview-max-height: 380px; /* Cambiá este valor para ajustar la altura máxima del preview */
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Uploader */
+.uploader {
+  display: grid;
+  gap: 1rem;
+}
+
+.dropzone {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  border: 2px dashed rgba(148, 163, 184, 0.35);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.dropzone.has-image {
+  border-style: solid;
+}
+
+.dropzone.dragging {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.2) inset;
+}
+
+.dropzone-content {
+  text-align: center;
+}
+
+.dropzone-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dropzone-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.dropzone-sub {
+  margin: 0.25rem 0 0;
+  opacity: 0.85;
+}
+
+.dropzone-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.preview {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: var(--preview-max-height, 420px);
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.preview-inline {
+  width: 100%;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.55em 1.1em;
+  font-size: 0.95em;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: inherit;
+}
+
+.btn:hover {
+  border-color: #93c5fd;
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.error-text {
+  color: #ef4444;
+  margin: 0;
+}
+
+/* Light theme refinements */
+@media (prefers-color-scheme: light) {
+  .card { background: rgba(255, 255, 255, 0.9); }
+  .dropzone { background: rgba(248, 250, 252, 0.6); }
 }

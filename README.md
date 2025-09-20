@@ -1,22 +1,14 @@
-# TP2 – Subir y Mostrar Imagen con File API
+# TP2 — Subida de Imágenes (React + Vite)
 
-Este trabajo práctico implementa una aplicación en **React + Vite** que permite:
+Aplicación simple para subir imágenes con drag & drop y mostrar una vista previa dentro del recuadro. Incluye validación de tipo (solo `image/*`) y acciones para cambiar o quitar la imagen.
 
-- Subir una imagen mediante un botón de selección de archivos.
-- Validar que el archivo subido sea efectivamente una imagen.
-- Mostrar la imagen dentro de la misma página como vista previa.
+## Funcionalidad principal
 
----
+- Arrastrar y soltar una imagen en el recuadro (o clic para seleccionar).
+- Validación de archivo: solo imágenes.
+- Vista previa renderizada dentro del recuadro.
+- Botones: Cambiar imagen y Quitar.
 
-## 🚀 Demo
+## Ver el proyecto
 
-👉 [Abrir la aplicación](https://xramex.github.io/TP2_RAMOS_TOMAS_LENG_4/)
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-- React
-- Vite
-- JavaScript (ES6+)
-- File API (FileReader)
+👉 Ver online: https://xramex.github.io/TP2_RAMOS_TOMAS_LENG_4/
