@@ -1,31 +1,18 @@
-// App: estructura general de la página (header, sección principal y tarjeta de subida)
-import SubirImagen from "./SubirImagen";
+// App: estructura general de la aplicación con navegación y rutas
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+import Home from "./pages/Home";
+import Contacto from "./pages/Contacto";
 import "./App.css";
 
 function App() {
   return (
     <div className="app-shell">
-      <header className="app-header">
-        <div className="brand">
-          <span className="badge">TP2</span>
-          <h1 className="title">Lenguajes 4 — Trabajo Práctico 2</h1>
-        </div>
-        <p className="subtitle">Ramos Tomás</p>
-      </header>
-
-      <main className="content">
-        <section className="section">
-          <h2 className="section-title">Subí tu imagen</h2>
-          <p className="section-desc">
-            Arrastrá y soltá una imagen o hacé clic en el recuadro para elegir un archivo.
-          </p>
-          <div className="card upload-card">
-            <SubirImagen />
-          </div>
-        </section>
-      </main>
-
-      
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contacto" element={<Contacto />} />
+      </Routes>
     </div>
   );
 }

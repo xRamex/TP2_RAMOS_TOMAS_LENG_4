@@ -45,6 +45,26 @@
   margin: 0;
 }
 
+.nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.nav-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.nav-link.active {
+  border-color: #93c5fd;
+  background: rgba(255, 255, 255, 0.06);
+}
+
 .content {
   display: grid;
   gap: 1rem;
@@ -185,6 +205,64 @@
 .error-text {
   color: #ef4444;
   margin: 0;
+}
+
+/* Formulario */
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.form-row label {
+  font-weight: 600;
+}
+
+.form-row input,
+.form-row textarea {
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  color: inherit;
+  padding: 0.6rem 0.75rem;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.2);
+}
+
+.field-error {
+  color: #ef4444;
+  font-size: 0.9rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: grid;
+  place-items: center;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  width: min(520px, calc(100% - 2rem));
 }
 
 /* Light theme refinements */
