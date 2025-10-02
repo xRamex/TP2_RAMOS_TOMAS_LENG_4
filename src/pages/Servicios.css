@@ -1,0 +1,287 @@
+/* Estilos para la página de Servicios */
+
+.habitaciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.habitacion-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.habitacion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.habitacion-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.habitacion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.habitacion-card:hover .habitacion-image img {
+  transform: scale(1.05);
+}
+
+.habitacion-content {
+  padding: 1.5rem;
+}
+
+.habitacion-nombre {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: 0.5rem;
+}
+
+.habitacion-descripcion {
+  opacity: 0.8;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.habitacion-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.habitacion-precio {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.habitacion-capacidad {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.habitacion-servicios {
+  margin-bottom: 1.5rem;
+}
+
+.habitacion-servicios strong {
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+.habitacion-servicios ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.habitacion-servicios li {
+  opacity: 0.8;
+  font-size: 0.85rem;
+  padding: 0.2rem 0;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.habitacion-servicios li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.btn {
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn:hover {
+  border-color: #93c5fd;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-secondary {
+  background: rgba(148, 163, 184, 0.2);
+  border-color: rgba(148, 163, 184, 0.35);
+  margin-left: 1rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(148, 163, 184, 0.3);
+  border-color: #93c5fd;
+}
+
+/* Estilos del Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  backdrop-filter: blur(6px);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.modal-info h3 {
+  font-size: 2rem;
+  color: inherit;
+  margin-bottom: 1rem;
+}
+
+.modal-descripcion {
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  margin-bottom: 1rem;
+}
+
+.detail-item strong {
+  color: inherit;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.servicios-completos {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+}
+
+.servicios-completos li {
+  opacity: 0.8;
+  padding: 0.3rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.servicios-completos li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.modal-actions .btn {
+  width: auto;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .habitaciones-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions .btn {
+    margin-left: 0;
+  }
+}
