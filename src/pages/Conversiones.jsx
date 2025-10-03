@@ -3,11 +3,11 @@ import "./Conversiones.css";
 
 // Monedas disponibles en DolarAPI - usando flag-icons CSS
 const monedasDisponibles = [
-  { codigo: "USD", nombre: "Dólar Estadounidense", flagClass: "fi fi-us", moneda: "USD", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/usd.jpg" },
-  { codigo: "EUR", nombre: "Euro", flagClass: "fi fi-eu", moneda: "EUR", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/eur.jpg" },
-  { codigo: "BRL", nombre: "Real Brasileño", flagClass: "fi fi-br", moneda: "BRL", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/brl.jpg" },
-  { codigo: "CLP", nombre: "Peso Chileno", flagClass: "fi fi-cl", moneda: "CLP", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/clp.jpg" },
-  { codigo: "UYU", nombre: "Peso Uruguayo", flagClass: "fi fi-uy", moneda: "UYU", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/uyu.jpg" }
+  { codigo: "USD", nombre: "Dólar Estadounidense", flagClass: "fi fi-us", moneda: "USD", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/billetes/usd.jpg" },
+  { codigo: "EUR", nombre: "Euro", flagClass: "fi fi-eu", moneda: "EUR", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/billetes/eur.jpg" },
+  { codigo: "BRL", nombre: "Real Brasileño", flagClass: "fi fi-br", moneda: "BRL", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/billetes/brl.jpg" },
+  { codigo: "CLP", nombre: "Peso Chileno", flagClass: "fi fi-cl", moneda: "CLP", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/billetes/clp.jpg" },
+  { codigo: "UYU", nombre: "Peso Uruguayo", flagClass: "fi fi-uy", moneda: "UYU", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/billetes/uyu.jpg" }
 ];
 
 // Función para renderizar bandera usando flag-icons
