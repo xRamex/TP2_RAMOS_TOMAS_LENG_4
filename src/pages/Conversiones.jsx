@@ -3,12 +3,11 @@ import "./Conversiones.css";
 
 // Monedas disponibles en DolarAPI - usando flag-icons CSS
 const monedasDisponibles = [
-  { codigo: "ARS", nombre: "Peso Argentino", flagClass: "fi fi-ar", moneda: "ARS" },
-  { codigo: "USD", nombre: "Dólar Estadounidense", flagClass: "fi fi-us", moneda: "USD" },
-  { codigo: "EUR", nombre: "Euro", flagClass: "fi fi-eu", moneda: "EUR" },
-  { codigo: "BRL", nombre: "Real Brasileño", flagClass: "fi fi-br", moneda: "BRL" },
-  { codigo: "CLP", nombre: "Peso Chileno", flagClass: "fi fi-cl", moneda: "CLP" },
-  { codigo: "UYU", nombre: "Peso Uruguayo", flagClass: "fi fi-uy", moneda: "UYU" }
+  { codigo: "USD", nombre: "Dólar Estadounidense", flagClass: "fi fi-us", moneda: "USD", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/usd.jpg" },
+  { codigo: "EUR", nombre: "Euro", flagClass: "fi fi-eu", moneda: "EUR", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/eur.jpg" },
+  { codigo: "BRL", nombre: "Real Brasileño", flagClass: "fi fi-br", moneda: "BRL", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/brl.jpg" },
+  { codigo: "CLP", nombre: "Peso Chileno", flagClass: "fi fi-cl", moneda: "CLP", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/clp.jpg" },
+  { codigo: "UYU", nombre: "Peso Uruguayo", flagClass: "fi fi-uy", moneda: "UYU", imagenBillete: "/TP2_RAMOS_TOMAS_LENG_4/src/assets/billetes/uyu.jpg" }
 ];
 
 // Función para renderizar bandera usando flag-icons
@@ -174,7 +173,14 @@ function Conversiones() {
 
             return (
               <div key={moneda.codigo} className="conversion-card">
-                <div className="card">
+                <div 
+                  className="card card-with-bg" 
+                  style={{
+                    backgroundImage: moneda.imagenBillete ? `url(${moneda.imagenBillete})` : 'none'
+                  }}
+                >
+                  <div className="card-overlay"></div>
+                  <div className="card-content">
                   <div className="card-header">
                     {renderizarBandera(moneda)}
                     <div className="currency-info">
@@ -240,6 +246,7 @@ function Conversiones() {
                       </small>
                     </div>
                   )}
+                  </div>
                 </div>
               </div>
             );
