@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./pages/Home";
 import Servicios from "./pages/Servicios";
+import Conversiones from "./pages/Conversiones";
 import Contacto from "./pages/Contacto";
 import "./App.css";
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/servicios" element={<Servicios />} />
+        <Route path="/conversiones" element={<Conversiones />} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </div>

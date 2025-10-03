@@ -7,7 +7,7 @@ const habitaciones = [
     id: 1,
     nombre: "Suite Presidencial",
     descripcion: "Elegante suite con vista panorámica de la ciudad. Incluye sala de estar, dormitorio principal y baño de lujo con jacuzzi.",
-    precio: "$250 USD/noche",
+    precio: "$500,000 ARS/noche",
     capacidad: "2-4 personas",
     servicios: ["WiFi gratuito", "Servicio a la habitación 24hs", "Jacuzzi", "Balcón privado", "Minibar"],
     imagen: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&h=600&fit=crop"
@@ -16,7 +16,7 @@ const habitaciones = [
     id: 2,
     nombre: "Habitación Ejecutiva",
     descripcion: "Habitación moderna y funcional, perfecta para viajeros de negocios. Cuenta con escritorio amplio y zona de trabajo.",
-    precio: "$120 USD/noche",
+    precio: "$250,000 ARS/noche",
     capacidad: "1-2 personas",
     servicios: ["WiFi gratuito", "Escritorio de trabajo", "TV LED 50\"", "Cafetera", "Caja fuerte"],
     imagen: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=800&h=600&fit=crop"
@@ -25,10 +25,10 @@ const habitaciones = [
     id: 3,
     nombre: "Habitación Familiar",
     descripcion: "Espaciosa habitación ideal para familias, con dos camas matrimoniales y zona de juegos para niños.",
-    precio: "$180 USD/noche",
+    precio: "$200,000 ARS/noche",
     capacidad: "4-6 personas",
     servicios: ["WiFi gratuito", "Zona de juegos", "Frigobar", "TV por cable", "Cunas disponibles"],
-    imagen: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&h=600&fit=crop"
+    imagen: "https://lh5.googleusercontent.com/J1XpKNGlglaV2YCFLOVWDMd4rUxkM2SoanCbgOfs3OymPCbOT9azKGjisbonjM-K5ti7fnf-o68yRmJwZi083J6Yarx7M20YG7ft92_5h2J3Tew_XAQLG-FqCOofn2fhbjcYCdaU"
   }
 ];
 

@@ -1,4 +1,4 @@
-Sitio con tres secciones: Home (subida de imágenes con drag & drop y preview en el recuadro), Servicios (catálogo de habitaciones de hotel con modal de detalles) y Contacto (formulario con validaciones y envío por EmailJS). Incluye navegación, estilos modernos y despliegue en GitHub Pages.
+Sitio con cuatro secciones: Home (subida de imágenes con drag & drop y preview en el recuadro), Servicios (catálogo de habitaciones de hotel con modal de detalles), Conversiones (conversor de pesos argentinos a múltiples monedas con tasas en tiempo real) y Contacto (formulario con validaciones y envío por EmailJS). Incluye navegación, estilos modernos y despliegue en GitHub Pages.
 
 ## Funcionalidades
 
@@ -11,8 +11,13 @@ Sitio con tres secciones: Home (subida de imágenes con drag & drop y preview en
   - Catálogo de habitaciones con imágenes, precios y servicios incluidos.
   - Modal con información detallada de cada habitación.
   - Diseño responsivo tipo tarjetas con efectos hover.
+- Conversor de monedas:
+  - Conversión de pesos argentinos a múltiples monedas internacionales.
+  - Tasas de cambio en tiempo real desde DolarAPI.
+  - Actualización manual de cotizaciones.
+  - Interfaz intuitiva con banderas y nombres de monedas.
 - Navegación y páginas:
-  - Navbar con rutas a Home, Servicios y Contacto (usa HashRouter para compatibilidad con GitHub Pages).
+  - Navbar con rutas a Home, Servicios, Conversiones y Contacto (usa HashRouter para compatibilidad con GitHub Pages).
 - Contacto con EmailJS:
   - Validaciones de campos (nombre, email y mensaje).
   - Envío usando EmailJS desde el frontend.
